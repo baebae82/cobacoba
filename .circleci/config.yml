@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cimg/go:1.16.4
+    parallelism: 4
+    steps:
+      - checkout
+      - run:
+          name: Ensure Test Parity
+          command: |
+            chmod +x yes.sh
+            ./yes.sh
